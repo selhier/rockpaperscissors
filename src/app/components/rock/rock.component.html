@@ -1,0 +1,8 @@
+<img 
+  [@onHover]="state"
+  (mouseover)="state = 'hovered'"
+  (mouseout)="state = 'default'"
+  (click)="selected()"
+  src="assets/img/rock.svg" 
+  width="{{ size || defaultSize }}" 
+  height="{{ size || defaultSize }}" alt="rock">

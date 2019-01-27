@@ -1,0 +1,21 @@
+
+.container{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: crimson;
+}
+h1{
+    padding-bottom: 10px;
+}
+.options{
+    width: 20%;
+    height: 64px;
+    padding: 8px;
+
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}

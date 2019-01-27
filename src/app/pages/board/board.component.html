@@ -1,0 +1,24 @@
+<div>
+  <button type="button" routerLink="">Back To Menu</button>
+</div>
+<div class="container">
+    <div [ngClass]="{selfish: !selected, shared: !!selected}">
+        <app-paper *ngIf="!selected || selected === 'paper'" (clicked)="onSelected($event)" [size]="100"></app-paper>
+        <app-rock *ngIf="!selected || selected === 'rock'" (clicked)="onSelected($event)" [size]="100"></app-rock>
+        <app-scissors *ngIf="!selected || selected === 'scissors'" (clicked)="onSelected($event)" [size]="100" ></app-scissors>
+    </div>
+    <div *ngIf="!!selected && !!iaChoice" class="results">
+        <h1 [ngClass]="{won: playerScore === 3, lose: iaScore === 3}">{{ displayMessage() }}</h1>
+        <h4>You: {{ playerScore }}</h4>
+        <h4>IA: {{ iaScore }}</h4>
+        <button type="button" (click)="retry()">
+            {{ !gameOver ? 'Continue' : 'Play Again' }}
+        </button>
+        <button type="button" routerLink="">Back To Menu</button>
+    </div>
+    <div *ngIf="!!selected" [ngClass]="{shared: !!selected}">
+        <app-paper *ngIf="iaChoice === 'paper'" [size]="100"></app-paper>
+        <app-rock *ngIf="iaChoice === 'rock'" [size]="100"></app-rock>
+        <app-scissors *ngIf="iaChoice === 'scissors'" [size]="100" ></app-scissors>
+    </div>
+</div>
